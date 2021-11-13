@@ -65,9 +65,9 @@ int main(int argc, char* argv[]){
 	
 	clock_t end = clock();
 	
-	double time = end - begin;
+	double time = (double)(end - begin)/CLOCKS_PER_SEC;
 	
 	cout << "Value of PI = " << 4 * sum << endl;
-	cout << "Time :" << time << endl;
+	cout << "Time :" << time * 1000<< endl;
 	
 }
