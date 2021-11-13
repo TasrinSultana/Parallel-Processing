@@ -1,0 +1,19 @@
+Compile C file with mpi : mpicc -g -Wall -o name name.c
+		    run : mpiexec -\n 2 ./name 
+		Pthread  : gcc −g −Wall −o pthhello pthhello.c − lpthread
+			  : ./pthhello <number of threads>
+
+MPI_Send(msg, msg_sz, msg_type, destination, tag, communicator);
+	msg_type == MPI_INT, MPI_CHAR etc; almost like c data
+	tag = is a nonnegative int . It can be used to dis-
+		tinguish messages that are otherwise identical. For example, suppose process 1 is
+		sending floats to process 0. Some of the floats should be printed, while others should
+		be used in a computation. Then the first four arguments to MPI Send provide no
+		information regarding which floats should be printed and which should be used in a
+		computation. So process 1 can use, say, a tag of 0 for the messages that should be
+		printed and a tag of 1 for the messages that should be used in a computation.
+		
+MPI_Receive( , , ,source, , , MPI_Status)
+
+MPI_Any_Source & MPI_Any_Tag can solve the problem of order in receiving message
+
