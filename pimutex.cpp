@@ -17,7 +17,7 @@ void* thread_sum(void* rank){
 	li = fi + my_n;
 	double local_sum = 0.0;
 	
-	if(my_rank % 2 == 0){
+	if(fi % 2 == 0){
 		factor = 1.0;
 	}
 	else{
